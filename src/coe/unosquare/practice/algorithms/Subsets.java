@@ -85,66 +85,6 @@ public class Subsets {
 
         System.out.println(output);
 
-//   TODO  old implementation
-
-//        Set<String> inputSet = new HashSet<>(input);
-//
-//        HashMap<String,  List<Set<String>>> output = new HashMap<>();
-//
-//        Set<Set<String>> o = new HashSet<>();
-//        Set<Set<String>> o2 = new HashSet<>();
-//        Set<Set<String>> removed = new HashSet<>();
-//
-//
-//        Set<Set<String>> x = inputSet
-//                .stream()
-//                .map(y -> {
-//                    Set<String> rem = new HashSet<>(Collections.singleton(y));
-//
-////                    removed.add(rem);
-////                    Set<String> res = input.stream()
-////                            .filter(z -> !z.equals(y))
-////                            .collect(Collectors.toSet());
-//
-//
-//                    output.put(y, Collections.singletonList(rem));
-//                    System.out.println("rem: "+ rem);
-//                    System.out.println("output: " + output);
-//                    return rem;
-//                })
-//                .reduce((prev, curr) -> {
-//
-//                    Set<String> res = input.stream()
-//                            .filter(z -> !z.equals(curr.iterator().next()))
-//                            .collect(Collectors.toSet());
-//
-//                    Set<Set<String>> v = new HashSet<>(output.get(curr.iterator().next()));
-//                    v.add(res);
-//
-//                    System.out.println(curr);
-//                    System.out.println(curr.iterator().next());
-//
-//                    output.put(curr.iterator().next(), v);
-//                    System.out.println("out red: "+ output);
-//
-//
-////                    System.out.println("prev: "+ prev);
-////                    Set<String> res2 = new HashSet<>(Set.copyOf(res));
-////                    res2.removeAll(prev);
-////                    o2.add(res2);
-////
-//                    prev.add(curr.iterator().next());
-//                    return prev;
-//                }).stream()
-//                        .collect(Collectors.toSet());
-//
-//        System.out.println(x);
-//        System.out.println("o");
-//        System.out.println(output);
-//        System.out.println("o2");
-//        System.out.println(o2);
-
-
     }
 
     public static Set<Set<String>> powerSet(Set<String> ints) {
