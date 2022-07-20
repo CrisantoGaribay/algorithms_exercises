@@ -5,7 +5,16 @@ import java.util.stream.Collectors;
 
 public class Subsets {
 
-    public static void subsets() {
+    public static void subsetsFirstApproach() {
+
+        /*
+        * This procedure gets the subsets of an input array using primitive variables and for loops
+        * from input "a", "c", "f", "j", "b" build subsets and print the result
+        * output: [a], [c], [a, c], [f], [a, f], [c, f], [a, c, f], [j] ...
+        *
+        * The complexity of this procedure is O(n^2)
+         */
+
         String[] input = {"a", "c", "f", "j", "b"};
         String[][] output = new String[0][]; //[a], [c], [a, c], [f], [a, f], [c, f], [a, c, f], [j] ...
 
@@ -36,6 +45,7 @@ public class Subsets {
 
         }
 
+        System.out.println("First approach");
         System.out.println(Arrays.deepToString(output));
     }
 
@@ -59,7 +69,15 @@ public class Subsets {
 
 
 
-    public static void subsets2() {
+    public static void subsetsSecondApproach() {
+
+        /*
+         * This procedure gets the subsets of an input array using Sets and streams
+         * from input "a", "c", "f", "j", "b" build subsets and print the result
+         * output: [a], [c], [a, c], [f], [a, f], [c, f], [a, c, f], [j] ...
+         *
+         * The complexity of this procedure is O(n^2)
+         */
 
         List<String> input = Arrays.asList("a", "c", "f", "j", "b");
         Set<Set<String>> output = new HashSet<>();
@@ -78,6 +96,7 @@ public class Subsets {
                     output.addAll(subsetsSet);
                 });
 
+        System.out.println("Second approach");
         System.out.println(output);
 
     }
