@@ -65,20 +65,15 @@ public class Subsets {
         Set<Set<String>> output = new HashSet<>();
 
 
-        input.stream()
-                .map(in -> {
+        input.forEach(in -> {
                     output.add(new HashSet<>(Collections.singleton(in)));
-                    return in;
-                })
-                .forEach(in -> {
-
-                    List<Set<String>> subsetsSet = output.stream()
+                    Set<Set<String>> subsetsSet = output.stream()
                             .map(out -> {
                                 Set<String> outSet = new HashSet<>(out);
-                                outSet.add(in);
+                                out.add(in);
                                 return outSet;
-                            }).distinct()
-                            .collect(Collectors.toList());
+                            })
+                            .collect(Collectors.toSet());
 
                     output.addAll(subsetsSet);
                 });
